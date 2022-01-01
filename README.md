@@ -23,7 +23,7 @@ Các bạn cần tạo mới một database với tên ```quanlytracnghiem``` v�
 
 Vì để tăng tính bảo mật, nhóm mình không để bất kì các đường dẫn hay nút bấm nào dẫn đến trang quản trị ở giao diện khách hàng.
 
-Nhân viên của cửa hàng có thể vào trang quản trị bằng cách truy cập vào ```/Login``` để chuyển đến trang đăng nhập. (Dưới đây là video minh họa)
+Quản trị hoặc giảng viên có thể vào trang quản trị bằng cách truy cập vào ```/Login``` để chuyển đến trang đăng nhập. (Dưới đây là video minh họa)
 
 Tài khoản admin:
 
