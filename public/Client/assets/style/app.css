@@ -1,0 +1,21 @@
+@media only screen and (min-width:1025px) {
+    .nav-list-mobile {
+        display: none !important;
+    }
+}
+@media only screen and (max-width:1024px) {
+    .nav-pc {
+        border: none;
+    }
+    .header-contact {
+        display: none;
+    }
+    .nav-link-pc {
+        display: none;
+    }
+    .nav-list-mobile {
+        border-bottom: solid gray 2px ;
+        width: 100%;
+        display: none;
+    }
+}

@@ -2,7 +2,7 @@
 
 Tên đề tài: Xây dựng phần mềm trắc nghiệm.
 
-Ngôn ngữ: PHP, HTML, CSS, Javascript.
+Ngôn ngữ: PHP Framework (Laravel), HTML, CSS, Javascript.
 
 Thành viên thực hiện:
   - Nguyễn Văn Trí,

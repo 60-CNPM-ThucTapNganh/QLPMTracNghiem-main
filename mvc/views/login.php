@@ -19,7 +19,7 @@
     <link href="public/admin/Admin/css/sb-admin-2.min.css?v=<?php echo time(); ?>" rel="stylesheet">
     <style>
         .bg-login-image {
-            background-image: url('public/images/anh-bia-summer.jpg');
+            background-image: url('public/images/bia-login.jpg');
 
         }
     </style>
