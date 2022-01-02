@@ -146,10 +146,17 @@
     }
   }
 
-  function validateNoiDung($inputNoiDung)
+  function validateNoiDungCH($inputNoiDung)
   {
       if (empty($inputNoiDung)) {
           $_SESSION['error']['noiDung'] = "Nội dung câu hỏi không được để trống";
+      }
+  }
+
+  function validateNoiDungDA($inputNoiDung)
+  {
+      if (empty($inputNoiDung)) {
+          $_SESSION['error']['dapAn'] = "Nội dung đáp án không được để trống";
       }
   }
 ?>

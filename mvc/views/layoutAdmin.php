@@ -134,8 +134,17 @@
                         <a class="collapse-item" href="Lop/Index">Lớp</a>
                         <a class="collapse-item" href="MonHoc/Index">Môn học</a>
                         <a class="collapse-item" href="CauHoi/Index">Câu hỏi</a>
+                        <a class="collapse-item" href="DapAn/Index">Đáp án</a>
                     </div>
                 </div>
+            </li>
+            <li class="nav-item">
+                <a class="tabA" href="KyThi/Index">
+                    <span class="nav-link">
+                        <i class="fas fa-bullhorn"></i>
+                        <span>Kỳ thi</span>
+                    </span>
+                </a>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">

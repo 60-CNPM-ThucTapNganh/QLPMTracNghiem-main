@@ -73,7 +73,7 @@ class CauHoi extends Controller
 
             $monhoc = $_POST['monhoc'];
 
-            validateNoiDung($noidung);
+            validateNoiDungCH($noidung);
 
             if (isset($_SESSION['error']) && count($_SESSION['error']) > 0) {
                 $_SESSION['ch'] = [
@@ -116,7 +116,7 @@ class CauHoi extends Controller
             $monhoc = $_POST['monhoc'];
 
 
-            validateNoiDung($noidung);
+            validateNoiDungCH($noidung);
 
             if (isset($_SESSION['error']) && count($_SESSION['error']) > 0) {
                 $_SESSION['ch'] = [

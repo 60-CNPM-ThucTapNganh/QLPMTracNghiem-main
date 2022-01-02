@@ -53,11 +53,11 @@
 <div class="checkform">
     <div class="content">
         <h3>THÊM MỚI CÂU HỎI</h3>
-        <form action="Cauhoi/Store" method="post" enctype="multipart/form-data">
+        <form action="CauHoi/Store" method="post" enctype="multipart/form-data">
             <div class="form-horizontal">
                 <hr />
                 <div class="form-group1">
-                    <label for="madu" class="control-label col-md-4"><b>Mã câu hỏi: </b></label>
+                    <label for="mach" class="control-label col-md-4"><b>Mã câu hỏi: </b></label>
                     <div class="col-md-8">
                         <input type="text" class="form-control text-box single-line" id="mach" name="mach" readonly value="<?php echo $data['mach'] ?>">
                     </div>
