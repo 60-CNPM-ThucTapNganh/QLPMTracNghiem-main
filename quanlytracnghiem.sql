@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 01, 2022 lúc 12:00 PM
+-- Thời gian đã tạo: Th1 03, 2022 lúc 02:07 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.3.30
 
@@ -40,7 +40,8 @@ CREATE TABLE `cauhoi` (
 
 INSERT INTO `cauhoi` (`MaCH`, `NoiDung`, `HinhAnh`, `MaMH`) VALUES
 ('CH0001', '1 + 1 = ?                                                                                                    ', '9135.jpg', 'THCS'),
-('CH0004', '2 + 2 = ?                                                                                                   ', '', 'THCS');
+('CH0004', '2 + 2 = ?                                                                                                   ', '', 'THCS'),
+('CH0005', '4 + 4 = ?                                            ', '', 'THTHCS');
 
 -- --------------------------------------------------------
 
@@ -54,6 +55,13 @@ CREATE TABLE `danhsachquyen` (
   `GhiChu` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Đang đổ dữ liệu cho bảng `danhsachquyen`
+--
+
+INSERT INTO `danhsachquyen` (`IDNhom`, `IDQuyen`, `GhiChu`) VALUES
+('GIANGVIEN', 'QUANLYDANHMUC', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -62,10 +70,20 @@ CREATE TABLE `danhsachquyen` (
 
 CREATE TABLE `dapan` (
   `MaDA` varchar(20) NOT NULL,
-  `NoiDung` varchar(300) NOT NULL,
+  `DapAn` varchar(300) NOT NULL,
   `DungSai` tinyint(4) NOT NULL,
   `MaCH` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `dapan`
+--
+
+INSERT INTO `dapan` (`MaDA`, `DapAn`, `DungSai`, `MaCH`) VALUES
+('DA0001', '2                                ', 1, 'CH0001'),
+('DA0002', '1                              ', 0, 'CH0001'),
+('DA0003', '3                                           ', 0, 'CH0001'),
+('DA0004', '4                                                    ', 0, 'CH0001');
 
 -- --------------------------------------------------------
 
@@ -98,6 +116,15 @@ CREATE TABLE `kythi` (
   `maNV` varchar(10) NOT NULL,
   `MaMH` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `kythi`
+--
+
+INSERT INTO `kythi` (`MaKT`, `TenKT`, `ThoiGian`, `ThoiGianBD`, `ThoiGianKT`, `TongSoCau`, `maNV`, `MaMH`) VALUES
+('KT0001', 'THCSKT15p', 15, '2022-01-03 17:38:00.000', '2022-01-03 17:54:00.000', 2, 'NV0001', 'THCS'),
+('KT0002', 'Kiểm tra 45p thực hành tin học cơ sở', 45, '2022-01-03 18:00:00.000', '2022-01-03 18:45:00.000', 50, 'NV0002', 'THTHCS'),
+('KT0003', 'Kiểm tra giữa kì thiết kế web', 60, '2022-01-03 18:26:00.000', '2022-01-03 19:26:00.000', 60, 'NV0003', 'TKW');
 
 -- --------------------------------------------------------
 
@@ -164,8 +191,10 @@ CREATE TABLE `nhanvien` (
 
 INSERT INTO `nhanvien` (`maNV`, `tenNV`, `gioiTinh`, `ngaySinh`, `diaChi`, `email`, `password`, `sdt`, `hinhAnh`, `IDNhom`) VALUES
 ('NV0001', 'Nguyễn Văn Trí', 1, '2000-10-17', 'Cam Ranh', 'tri@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '0365062796', 'tri_avatar.jpg', 'ADMIN'),
-('NV0002', 'Hoàng Thanh Sơn', 1, '2000-04-07', 'Cam Lâm', 'sonhoang.070400@gmail.com', '211021d2b119d78fe0e0d4d29eeff687', '0358405987', 'son_avatar.PNG', 'ADMIN'),
-('NV0003', 'Trương Thị Thùy Trang', 0, '2000-03-30', 'Nha Trang', 'truongthithuytrang011@gmail.com', '31c87dd24a18a9fc28dc0f7c3ef0d6f9', '0354037706', 'trang_avatar.PNG', 'GIANGVIEN');
+('NV0002', 'Hoàng Thanh Sơn', 1, '2000-04-07', 'Cam Lâm', 'sonhoang.070400@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '0358405987', 'son_avatar.PNG', 'ADMIN'),
+('NV0003', 'Trương Thị Thùy Trang', 0, '2000-03-30', 'Nha Trang', 'truongthithuytrang011@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '0354037706', 'trang_avatar.PNG', 'GIANGVIEN'),
+('NV0004', 'Nguyễn Tấn Phát', 1, '2000-01-09', 'Nha Trang', 'phat.nt.60cntt@ntu.edu.vn', '211021d2b119d78fe0e0d4d29eeff687', '0342334966', 'phat_avatar.PNG', 'ADMIN'),
+('NV0005', 'Đặng Ngọc Luyến', 1, '2000-01-01', 'Nha Trang', 'dnluyenit2@gmail.com', '211021d2b119d78fe0e0d4d29eeff687', '0977715564', 'luyen_avatar.jpg', 'ADMIN');
 
 -- --------------------------------------------------------
 
@@ -196,6 +225,14 @@ CREATE TABLE `quyen` (
   `IDQuyen` varchar(50) NOT NULL,
   `TenQuyen` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `quyen`
+--
+
+INSERT INTO `quyen` (`IDQuyen`, `TenQuyen`) VALUES
+('PHANQUYEN', 'Phân quyền'),
+('QUANLYDANHMUC', 'Quản lý danh mục');
 
 -- --------------------------------------------------------
 
