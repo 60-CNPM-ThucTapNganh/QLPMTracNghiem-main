@@ -2,12 +2,12 @@
 class DapAnModel extends DataBase
 {
 
-    public function listAll()
+    public function getDapAns($MaCH)
     {
-        $qr = "SELECT * FROM dapan";
+        $qr = "SELECT * FROM dapan WHERE MaCH = '$MaCH'";
         $rows = mysqli_query($this->con, $qr);
         $arr = array();
-        while ($row = mysqli_fetch_array($rows)) {
+        while ($row = mysqli_fetch_assoc($rows)) {
             $arr[] = $row;
         }
         return json_encode($arr);
@@ -25,11 +25,8 @@ class DapAnModel extends DataBase
     {
         $qr = "SELECT * FROM dapan,cauhoi WHERE dapan.MaCH = cauhoi.MaCH AND MaDA = '$id'";
         $rows = mysqli_query($this->con, $qr);
-        $arr = array();
-        while ($row = mysqli_fetch_array($rows)) {
-            $arr[] = $row;
-        }
-        return json_encode($arr);
+        $row = mysqli_fetch_assoc($rows);
+        return $row;
     }
 
     public function insert($mada, $dapan, $dungsai, $cauhoi)

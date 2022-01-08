@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 03, 2022 lúc 02:07 PM
+-- Thời gian đã tạo: Th1 08, 2022 lúc 03:22 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.3.30
 
@@ -39,9 +39,9 @@ CREATE TABLE `cauhoi` (
 --
 
 INSERT INTO `cauhoi` (`MaCH`, `NoiDung`, `HinhAnh`, `MaMH`) VALUES
-('CH0001', '1 + 1 = ?                                                                                                    ', '9135.jpg', 'THCS'),
-('CH0004', '2 + 2 = ?                                                                                                   ', '', 'THCS'),
-('CH0005', '4 + 4 = ?                                            ', '', 'THTHCS');
+('CH0001', 'Khi thực thi biến câu lệnh $a = $b % $c; thì kiểu dữ liệu (type) của biến a là:                                                    ', '', 'PTPMMNM'),
+('CH0002', 'Ký hiệu nào dùng để kết thúc câu lệnh trong PHP?                                                    ', '', 'PTPMMNM'),
+('CH0003', 'Kiểu dữ liệu (type) nào sẽ được gán cho biến var khi thực hiện lệnh $var = 50.0;                                                    ', '', 'PTPMMNM');
 
 -- --------------------------------------------------------
 
@@ -80,10 +80,18 @@ CREATE TABLE `dapan` (
 --
 
 INSERT INTO `dapan` (`MaDA`, `DapAn`, `DungSai`, `MaCH`) VALUES
-('DA0001', '2                                ', 1, 'CH0001'),
-('DA0002', '1                              ', 0, 'CH0001'),
-('DA0003', '3                                           ', 0, 'CH0001'),
-('DA0004', '4                                                    ', 0, 'CH0001');
+('DA0001', 'double                                ', 0, 'CH0001'),
+('DA0002', 'integer                                                    ', 1, 'CH0001'),
+('DA0003', 'string                                              ', 0, 'CH0001'),
+('DA0004', 'boolean                                                    ', 0, 'CH0001'),
+('DA0005', 'dấu cảm thán ( ! )                                                                            ', 0, 'CH0002'),
+('DA0006', 'dấu chấm đôi ( :: )                                                                            ', 0, 'CH0002'),
+('DA0007', 'dấu phẩy ( , )                                                   ', 0, 'CH0002'),
+('DA0008', 'dấu chấm phẩy ( ; )                                                    ', 1, 'CH0002'),
+('DA0009', 'boolean                                                ', 0, 'CH0003'),
+('DA0010', 'double                                                   ', 1, 'CH0003'),
+('DA0011', 'string                                             ', 0, 'CH0003'),
+('DA0012', 'integer                                                ', 0, 'CH0003');
 
 -- --------------------------------------------------------
 
@@ -92,13 +100,26 @@ INSERT INTO `dapan` (`MaDA`, `DapAn`, `DungSai`, `MaCH`) VALUES
 --
 
 CREATE TABLE `ketqua` (
-  `MaKQ` varchar(50) NOT NULL,
-  `NgayThi` date NOT NULL,
-  `DiemSo` float NOT NULL,
-  `ThoiGianNopBai` datetime(3) NOT NULL,
-  `MaSV` varchar(10) NOT NULL,
-  `MaKT` varchar(20) NOT NULL
+  `id` int(11) NOT NULL,
+  `SoCauDung` int(11) NOT NULL,
+  `SoCauSai` int(11) NOT NULL,
+  `SoCauChuaChon` int(11) NOT NULL,
+  `DiemSo` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `ketqua`
+--
+
+INSERT INTO `ketqua` (`id`, `SoCauDung`, `SoCauSai`, `SoCauChuaChon`, `DiemSo`) VALUES
+(1, 2, 1, 0, 10),
+(2, 1, 2, 0, 3.33),
+(3, 1, 2, 0, 3.33),
+(4, 2, 1, 0, 6.67),
+(5, 0, 0, 3, 0),
+(6, 2, 1, 0, 6.67),
+(7, 2, 0, 1, 6.67),
+(8, 3, 0, 0, 10);
 
 -- --------------------------------------------------------
 
@@ -122,9 +143,30 @@ CREATE TABLE `kythi` (
 --
 
 INSERT INTO `kythi` (`MaKT`, `TenKT`, `ThoiGian`, `ThoiGianBD`, `ThoiGianKT`, `TongSoCau`, `maNV`, `MaMH`) VALUES
-('KT0001', 'THCSKT15p', 15, '2022-01-03 17:38:00.000', '2022-01-03 17:54:00.000', 2, 'NV0001', 'THCS'),
+('KT0001', 'THCSKT15aaab', 15, '2022-01-03 17:35:00.000', '2022-01-03 17:54:00.000', 2, 'NV0001', 'THCS'),
 ('KT0002', 'Kiểm tra 45p thực hành tin học cơ sở', 45, '2022-01-03 18:00:00.000', '2022-01-03 18:45:00.000', 50, 'NV0002', 'THTHCS'),
 ('KT0003', 'Kiểm tra giữa kì thiết kế web', 60, '2022-01-03 18:26:00.000', '2022-01-03 19:26:00.000', 60, 'NV0003', 'TKW');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `kythi_cauhoi`
+--
+
+CREATE TABLE `kythi_cauhoi` (
+  `MaKT` varchar(20) NOT NULL,
+  `MaCH` varchar(20) NOT NULL,
+  `GhiChu` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `kythi_cauhoi`
+--
+
+INSERT INTO `kythi_cauhoi` (`MaKT`, `MaCH`, `GhiChu`) VALUES
+('KT0001', 'CH0001', NULL),
+('KT0001', 'CH0002', NULL),
+('KT0001', 'CH0003', NULL);
 
 -- --------------------------------------------------------
 
@@ -162,6 +204,7 @@ CREATE TABLE `monhoc` (
 --
 
 INSERT INTO `monhoc` (`MaMH`, `TenMH`) VALUES
+('PTPMMNM', 'Phát triển phần mềm mã nguồn mở'),
 ('THCS', 'Tin học cơ sở'),
 ('THTHCS', 'Thực hành tin học cơ sở'),
 ('TKW', 'Thiết kế web');
@@ -281,9 +324,7 @@ ALTER TABLE `dapan`
 -- Chỉ mục cho bảng `ketqua`
 --
 ALTER TABLE `ketqua`
-  ADD PRIMARY KEY (`MaKQ`),
-  ADD KEY `kq_sv_fk` (`MaSV`),
-  ADD KEY `kq_kt_fk` (`MaKT`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `kythi`
@@ -292,6 +333,13 @@ ALTER TABLE `kythi`
   ADD PRIMARY KEY (`MaKT`),
   ADD KEY `kt_mh_fk` (`MaMH`),
   ADD KEY `kt_nv_fk` (`maNV`);
+
+--
+-- Chỉ mục cho bảng `kythi_cauhoi`
+--
+ALTER TABLE `kythi_cauhoi`
+  ADD PRIMARY KEY (`MaKT`,`MaCH`),
+  ADD KEY `ktch_ch_fk` (`MaCH`);
 
 --
 -- Chỉ mục cho bảng `lop`
@@ -332,6 +380,16 @@ ALTER TABLE `sinhvien`
   ADD KEY `sv_l_fk` (`MaLop`);
 
 --
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `ketqua`
+--
+ALTER TABLE `ketqua`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- Các ràng buộc cho các bảng đã đổ
 --
 
@@ -355,18 +413,18 @@ ALTER TABLE `dapan`
   ADD CONSTRAINT `da_ch_fk` FOREIGN KEY (`MaCH`) REFERENCES `cauhoi` (`MaCH`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `ketqua`
---
-ALTER TABLE `ketqua`
-  ADD CONSTRAINT `kq_kt_fk` FOREIGN KEY (`MaKT`) REFERENCES `kythi` (`MaKT`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `kq_sv_fk` FOREIGN KEY (`MaSV`) REFERENCES `sinhvien` (`MaSV`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Các ràng buộc cho bảng `kythi`
 --
 ALTER TABLE `kythi`
   ADD CONSTRAINT `kt_mh_fk` FOREIGN KEY (`MaMH`) REFERENCES `monhoc` (`MaMH`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `kt_nv_fk` FOREIGN KEY (`maNV`) REFERENCES `nhanvien` (`maNV`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `kythi_cauhoi`
+--
+ALTER TABLE `kythi_cauhoi`
+  ADD CONSTRAINT `ktch_ch_fk` FOREIGN KEY (`MaCH`) REFERENCES `cauhoi` (`MaCH`),
+  ADD CONSTRAINT `ktch_kt_fk` FOREIGN KEY (`MaKT`) REFERENCES `kythi` (`MaKT`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `nhanvien`

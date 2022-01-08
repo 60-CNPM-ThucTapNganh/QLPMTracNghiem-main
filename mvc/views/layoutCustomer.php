@@ -67,6 +67,9 @@
                 <a href="MonHocClient/Index">Môn học</a>
             </li>
             <li class="nav-link-pc px-5 hover:text-gray-500">
+                <a href="KetQua/Index">Kết quả</a>
+            </li>
+            <li class="nav-link-pc px-5 hover:text-gray-500">
                 <a href="CaNhanClient/Index">Trang cá nhân</a>
             </li>
             <li class="nav-link-pc px-5 hover:text-gray-500">
@@ -93,6 +96,9 @@
             </li>
             <li class="nav-link-mobile px-5 py-2 hover:text-gray-500">
                 <a href="MonHocClient/Index">Môn học</a>
+            </li>
+            <li class="nav-link-mobile px-5 py-2 hover:text-gray-500">
+                <a href="KetQua/Index">Kết quả</a>
             </li>
             <li class="nav-link-mobile px-5 py-2 hover:text-gray-500">
                 <a href="CaNhanClient/Index">Trang cá nhân</a>
