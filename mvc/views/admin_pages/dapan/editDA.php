@@ -81,7 +81,7 @@ if (isset($_SESSION['da']['ch'])) {
 <div class="checkform">
     <div class="content">
         <h3>CẬP NHẬT THÔNG TIN ĐÁP ÁN</h3>
-        <form action="CauHoi/Save/<?php echo $data['da']['MaDA'] ?>" method="POST" enctype="multipart/form-data">
+        <form action="DapAn/Save/<?php echo $data['da']['MaDA'] ?>" method="POST" enctype="multipart/form-data">
             <div class="form-horizontal">
                 <hr />
                 <div class="form-group1">
@@ -92,9 +92,9 @@ if (isset($_SESSION['da']['ch'])) {
                 </div>
 
                 <div class="form-group1">
-                    <label for="monhoc" class="control-label col-md-4"><b>Câu hỏi: </b></label>
+                    <label for="cauhoi" class="control-label col-md-4"><b>Câu hỏi: </b></label>
                     <div class="col-md-8">
-                        <select name="monhoc" class="form-control text-box single-line">
+                        <select name="cauhoi" class="form-control text-box single-line">
                             <?php
                             foreach ($data['listTenCH'] as $cauhoi) {
                                 if ($cauhoi['MaCH'] == $_SESSION['da']['ch']) {

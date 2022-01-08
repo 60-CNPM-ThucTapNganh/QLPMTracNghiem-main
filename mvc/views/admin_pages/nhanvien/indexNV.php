@@ -204,4 +204,3 @@
     ?>
 </section>
 
-<script src="public/admin/Admin/js/phantrang.js"></script>

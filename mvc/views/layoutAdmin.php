@@ -146,6 +146,15 @@
                     </span>
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="tabA" href="ChiTietKyThi/Index">
+                    <span class="nav-link">
+                        <i class="fas fa-bullhorn"></i>
+                        <span>CT kỳ thi</span>
+                    </span>
+                </a>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
             <!-- Heading -->
@@ -298,6 +307,7 @@
         <!-- Custom scripts for all pages-->
         <script src="public/admin/Admin/js/sb-admin-2.min.js?v=<?php echo time(); ?>"></script>
         <script src="public/jquery.table2excel.js?v=<?php echo time(); ?>"></script>
+        <script src="public/admin/Admin/js/phantrang.js?v=<?php echo time(); ?>"></script>
         <script type="text/javascript" src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js?v=<?php echo time(); ?>">
 
         </script>

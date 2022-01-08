@@ -42,12 +42,9 @@ class KyThiModel extends DataBase
         return mysqli_query($this->con, $qr);
     }
     
-    public function update($makt, $tenkt, $thoigian, $thoigianBD, $thoigianKT, $tongsocau, $nhanvien, $monhoc)
-    {
-        $qr = "UPDATE kythi SET TenKT = '$tenkt', ThoiGian ='$thoigian', 
-        ThoiGianBD = '$thoigianBD', ThoiGianKT = '$thoigianKT', TongSoCau = '$tongsocau',
-        maNV = '$nhanvien', MaMH = '$monhoc',
-        WHERE MaKT = '$makt'";
+    public function update($makt, $tenkt, $thoigian, $thoigianBD, $thoigianKT, $tongsocau, $nhanvien, $monhoc) {
+        $qr = "UPDATE kythi SET TenKT = '$tenkt', ThoiGian = '$thoigian', ThoiGianBD = '$thoigianBD', ThoiGianKT = '$thoigianKT', TongSoCau = '$tongsocau', maNV = '$nhanvien', MaMH = '$monhoc' WHERE MaKT = '$makt'";   
         return mysqli_query($this->con, $qr);
     }
+
 }

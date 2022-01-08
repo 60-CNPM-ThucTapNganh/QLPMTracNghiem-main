@@ -113,8 +113,6 @@ class DapAn extends Controller
             $dungsai = $_POST['dungsai'];
             $cauhoi = $_POST['cauhoi'];
 
-            validateNoiDungDA($dapan);
-
             if (isset($_SESSION['error']) && count($_SESSION['error']) > 0) {
                 $_SESSION['da'] = [
                     'dapAn' => $dapan,

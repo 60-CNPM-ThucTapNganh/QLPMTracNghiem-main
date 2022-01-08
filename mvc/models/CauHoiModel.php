@@ -50,8 +50,7 @@ class CauHoiModel extends DataBase
         return mysqli_query($this->con, $qr);
     }
 
-    public function delete($mach)
-    {
+    public function delete($mach) {
         $qr = "DELETE FROM cauhoi WHERE MaCH = '$mach'";
         return mysqli_query($this->con, $qr);
     }

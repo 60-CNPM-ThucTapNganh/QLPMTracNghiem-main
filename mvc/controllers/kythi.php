@@ -102,7 +102,7 @@ class KyThi extends Controller
 
     function Edit($id)
     {
-        $kt = json_decode($this->ktModel->listAll(), true);
+        $kt = json_decode($this->ktModel->getKyThiById($id), true);
         $listTenMH = json_decode($this->mhModel->listAll(), true);
         $NV = json_decode($this->nvModel->getNV(), true);
 
@@ -142,12 +142,28 @@ class KyThi extends Controller
                 return $this->redirectTo("KyThi", "Edit", ['id' => $makt]);
             }
             else {
-                $save = $this->model("KyThiModel");
-                $save->update($makt, $tenkt, $thoigian, $thoigianBD, $thoigianKT, $tongsocau, $_SESSION["user"]["maNV"], $monhoc);
+                $this->ktModel->update($makt, $tenkt, $thoigian, $thoigianBD, $thoigianKT, $tongsocau, $_SESSION["user"]["maNV"], $monhoc);
                 $_SESSION['thongbao'] = "Cập nhật thông tin thành công";
             }
         } 
         return $this->redirectTo("KyThi", "Index");
     }
     
+    function Details($id)
+    {
+        $kt = json_decode($this->ktModel->getKyThiById($id), true);
+        $listTenMH = json_decode($this->mhModel->listAll(), true);
+        $NV = json_decode($this->nvModel->getNV(), true);
+
+        //view edit
+        if (count($kt) > 0) {
+            $this->view("layoutAdmin", [
+                'page' => 'kythi/detailsKT',
+                'kt' => $kt[0],
+                'listTenMH' => $listTenMH,
+                'NV' => $NV
+            ]);
+        } else
+            echo "Không tìm thấy";
+    }
 }

@@ -72,12 +72,18 @@ if (isset($_SESSION['kt']['thoiGianBD'])) {
     $thoiGianBD = $data['kt']['ThoiGianBD'];
 }
 
+$string_to_date_tgbd=$d=strtotime($thoiGianBD);
+$thoiGianBDNew=Date('Y-m-d\TH:i',$string_to_date_tgbd);
+
 if (isset($_SESSION['kt']['thoiGianKT'])) {
     $thoiGianKT = $_SESSION['kt']['thoiGianKT'];
     unset($_SESSION['kt']['thoiGianKT']);
 } else {
     $thoiGianKT = $data['kt']['ThoiGianKT'];
 }
+
+$string_to_date_tgkt=$d=strtotime($thoiGianKT);
+$thoiGianKTNew=Date('Y-m-d\TH:i',$string_to_date_tgkt);
 
 if (isset($_SESSION['kt']['tongSoCau'])) {
     $tongSoCau = $_SESSION['kt']['tongSoCau'];
@@ -138,7 +144,7 @@ if (isset($_SESSION['kt']['nv'])) {
                 <div class="form-group1">
                     <label for="thoigianBD" class="control-label col-md-4"><b>Thời gian mở đề: </b></label>
                     <div class="col-md-8">
-                        <input type="datetime-local" class="form-control text-box single-line" id="thoigianBD" name="thoigianBD" value="<?php echo $thoiGianBD; ?>">
+                        <input type="datetime-local" class="form-control text-box single-line" id="thoigianBD" name="thoigianBD" value="<?php echo $thoiGianBDNew; ?>">
                         <span class="text-danger"><?php if (isset($_SESSION['error']['thoiGianBD'])) {
                                                         echo $_SESSION['error']['thoiGianBD'];
                                                         unset($_SESSION['error']['thoiGianBD']);
@@ -149,7 +155,7 @@ if (isset($_SESSION['kt']['nv'])) {
                 <div class="form-group1">
                     <label for="thoigianKT" class="control-label col-md-4"><b>Thời gian đóng đề: </b></label>
                     <div class="col-md-8">
-                        <input type="datetime-local" class="form-control text-box single-line" id="thoigianKT" name="thoigianKT" value="<?php echo $thoiGianKT; ?>">
+                        <input type="datetime-local" class="form-control text-box single-line" id="thoigianKT" name="thoigianKT" value="<?php echo $thoiGianKTNew; ?>">
                         <span class="text-danger"><?php if (isset($_SESSION['error']['thoiGianKT'])) {
                                                         echo $_SESSION['error']['thoiGianKT'];
                                                         unset($_SESSION['error']['thoiGianKT']);

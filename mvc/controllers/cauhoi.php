@@ -165,7 +165,7 @@ class CauHoi extends Controller
             $this->view("layoutAdmin", [
                 'page' => 'cauhoi/deleteCH',
                 'ch' => $ch[0],
-                'listTenMH' => $listTenMH
+                'listTenMH' => $listTenMH,    
             ]);
         } else
             echo "Không tìm thấy";

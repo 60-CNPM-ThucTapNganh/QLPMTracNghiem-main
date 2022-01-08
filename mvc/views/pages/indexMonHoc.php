@@ -8,7 +8,7 @@
             <div class="border border-[#eee] rounded-xl pb-4 mb-8 shadow-lg">
                 <div class="card-top bg-gradient-to-r from-green-500 to-purple-500 rounded-xl h-36 w-full cursor-pointer"></div>
                 <div class="card-body px-2 pt-2 hover:underline hover:text-gray-500">
-                    <a href="#">Tin Học Cơ Sở - GV. Bùi Thị Hồng Minh</a>
+                    <a href="TracNghiem/Index">Tin Học Cơ Sở - GV. Bùi Thị Hồng Minh</a>
                 </div>
             </div>
             <div class="border border-[#eee] rounded-xl pb-4 mb-8 shadow-lg">
