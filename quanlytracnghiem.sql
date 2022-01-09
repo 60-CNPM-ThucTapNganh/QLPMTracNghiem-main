@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 08, 2022 lúc 03:22 PM
+-- Thời gian đã tạo: Th1 09, 2022 lúc 07:44 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.3.30
 
@@ -119,7 +119,10 @@ INSERT INTO `ketqua` (`id`, `SoCauDung`, `SoCauSai`, `SoCauChuaChon`, `DiemSo`) 
 (5, 0, 0, 3, 0),
 (6, 2, 1, 0, 6.67),
 (7, 2, 0, 1, 6.67),
-(8, 3, 0, 0, 10);
+(8, 3, 0, 0, 10),
+(9, 2, 1, 0, 6.67),
+(10, 3, 0, 0, 10),
+(11, 0, 3, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -284,16 +287,24 @@ INSERT INTO `quyen` (`IDQuyen`, `TenQuyen`) VALUES
 --
 
 CREATE TABLE `sinhvien` (
-  `MaSV` varchar(10) NOT NULL,
-  `TenSV` varchar(50) NOT NULL,
-  `GioiTinh` tinyint(4) NOT NULL,
-  `NgaySinh` date NOT NULL,
-  `DiaChi` varchar(50) NOT NULL,
-  `Email` varchar(50) NOT NULL,
-  `SDT` varchar(20) NOT NULL,
-  `HinhAnh` varchar(250) NOT NULL,
+  `maSV` varchar(10) NOT NULL,
+  `tenSV` varchar(50) NOT NULL,
+  `gioiTinh` tinyint(4) NOT NULL,
+  `ngaySinh` date NOT NULL,
+  `diaChi` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `sdt` varchar(20) NOT NULL,
+  `hinhAnh` varchar(250) NOT NULL,
   `MaLop` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `sinhvien`
+--
+
+INSERT INTO `sinhvien` (`maSV`, `tenSV`, `gioiTinh`, `ngaySinh`, `diaChi`, `email`, `password`, `sdt`, `hinhAnh`, `MaLop`) VALUES
+('SV0001', 'Nguyễn Văn Trí', 1, '2000-10-17', 'Cam Ranh', 'svtri@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '0365062796', 'tri_avatar.jpg', '60CNTT2');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -376,7 +387,7 @@ ALTER TABLE `quyen`
 -- Chỉ mục cho bảng `sinhvien`
 --
 ALTER TABLE `sinhvien`
-  ADD PRIMARY KEY (`MaSV`),
+  ADD PRIMARY KEY (`maSV`),
   ADD KEY `sv_l_fk` (`MaLop`);
 
 --
@@ -387,7 +398,7 @@ ALTER TABLE `sinhvien`
 -- AUTO_INCREMENT cho bảng `ketqua`
 --
 ALTER TABLE `ketqua`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

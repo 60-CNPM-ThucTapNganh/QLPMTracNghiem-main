@@ -1,5 +1,5 @@
-<div class="container relative font-sans font-semibold max-w-full">
-
+<main>
+    <section class="mx-4 px-4 py-4 my-4 border-2 border-[#eee]">
     <main class="lg:flex md:gap-x-3 mx-auto">
         <div class="p-5 md:w-3/5 block mx-auto">
             <div class="px-5 py-8 mb-8 rounded-lg border border-[#eee] text-center bg-white dark:bg-[#0F0D58]">
@@ -60,4 +60,5 @@
             </div>
         </div>
     </main>
-</div>
+    </section>
+</main>

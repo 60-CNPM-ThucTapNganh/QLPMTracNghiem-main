@@ -178,6 +178,15 @@
             </div>
             <!-- Nav Item - Thông tin nhân viên -->
             <li class="nav-item">
+                <a class="tabA" href="sinhvien/index">
+                    <span class="nav-link">
+                        <i class="fa fa-users"></i>
+                        <span>Thông tin sinh viên</span>
+                    </span>
+                </a>
+            </li>
+            <!-- Nav Item - Thông tin nhân viên -->
+            <li class="nav-item">
                 <a class="tabA" href="nhanvien/index">
                     <span class="nav-link">
                         <i class="fa fa-users"></i>

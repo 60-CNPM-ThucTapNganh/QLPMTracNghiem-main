@@ -52,25 +52,25 @@
 </style>
 <div class="checkform">
     <div class="content">
-        <h3>THÊM MỚI NHÂN VIÊN</h3>
-        <form action="NhanVien/Store" method="post" enctype="multipart/form-data">
+        <h3>THÊM MỚI SINH VIÊN</h3>
+        <form action="SinhVien/Store" method="post" enctype="multipart/form-data">
             <div class="form-horizontal">
                 <hr />
                 <div class="form-group1">
-                    <label for="manv" class="control-label col-md-4"><b>Mã nhân viên</b></label>
+                    <label for="masv" class="control-label col-md-4"><b>Mã sinh viên</b></label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control text-box single-line" id="manv" name="manv" readonly value="<?php echo $data['manv'] ?>">
+                        <input type="text" class="form-control text-box single-line" id="masv" name="masv" readonly value="<?php echo $data['masv'] ?>">
                     </div>
                 </div>
 
                 <div class="form-group1">
-                    <label for="tennv" class="control-label col-md-4"><b>Tên nhân viên</b></label>
+                    <label for="tensv" class="control-label col-md-4"><b>Tên sinh viên</b></label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control text-box single-line" id="tennv" name="tennv" value="<?php if (isset($_SESSION['nv']['tenNV'])) echo $_SESSION['nv']['tenNV'];
-                                                                                                                    unset($_SESSION['nv']['tenNV']); ?>">
-                        <span class="text-danger"><?php if (isset($_SESSION['error']['tenNV'])) {
-                                                        echo $_SESSION['error']['tenNV'];
-                                                        unset($_SESSION['error']['tenNV']);
+                        <input type="text" class="form-control text-box single-line" id="tensv" name="tensv" value="<?php if (isset($_SESSION['sv']['tenSV'])) echo $_SESSION['sv']['tenSV'];
+                                                                                                                    unset($_SESSION['sv']['tenSV']); ?>">
+                        <span class="text-danger"><?php if (isset($_SESSION['error']['tenSV'])) {
+                                                        echo $_SESSION['error']['tenSV'];
+                                                        unset($_SESSION['error']['tenSV']);
                                                     } ?></span>
                     </div>
                 </div>
@@ -78,17 +78,17 @@
                 <div class="form-group1">
                     <label style="padding-top:10px;" for="gioitinh" class="control-label col-md-4"><b>Giới tính</b></label>
                     <div class="col-md-8">
-                        <input type="radio" name="gioitinh" value="1" <?php if (!isset($_SESSION['nv']['gioiTinh']) || (isset($_SESSION['nv']['gioiTinh']) && $_SESSION['nv']['gioiTinh'] == '1')) echo "checked"; ?>> Nam
-                        <input style="margin-left: 10px;" type="radio" name="gioitinh" value="0" <?php if (isset($_SESSION['nv']['gioiTinh']) && $_SESSION['nv']['gioiTinh'] == '0') echo "checked";
-                                                                                                    unset($_SESSION['nv']['gioiTinh']); ?>> Nữ
+                        <input type="radio" name="gioitinh" value="1" <?php if (!isset($_SESSION['sv']['gioiTinh']) || (isset($_SESSION['sv']['gioiTinh']) && $_SESSION['sv']['gioiTinh'] == '1')) echo "checked"; ?>> Nam
+                        <input style="margin-left: 10px;" type="radio" name="gioitinh" value="0" <?php if (isset($_SESSION['sv']['gioiTinh']) && $_SESSION['sv']['gioiTinh'] == '0') echo "checked";
+                                                                                                    unset($_SESSION['sv']['gioiTinh']); ?>> Nữ
                     </div>
                 </div>
 
                 <div class="form-group1">
                     <label for="ngaysinh" class="control-label col-md-4"><b>Ngày sinh</b></label>
                     <div class="col-md-8">
-                        <input type="date" class="form-control text-box single-line" id="ngaysinh" name="ngaysinh" value="<?php if (isset($_SESSION['nv']['ngaySinh'])) echo $_SESSION['nv']['ngaySinh'];
-                                                                                                                            unset($_SESSION['nv']['ngaySinh']); ?>">
+                        <input type="date" class="form-control text-box single-line" id="ngaysinh" name="ngaysinh" value="<?php if (isset($_SESSION['sv']['ngaySinh'])) echo $_SESSION['sv']['ngaySinh'];
+                                                                                                                            unset($_SESSION['sv']['ngaySinh']); ?>">
                         <span class="text-danger"><?php if (isset($_SESSION['error']['ngaySinh'])) {
                                                         echo $_SESSION['error']['ngaySinh'];
                                                         unset($_SESSION['error']['ngaySinh']);
@@ -99,8 +99,8 @@
                 <div class="form-group1">
                     <label for="diachi" class="control-label col-md-4"><b>Địa chỉ</b></label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control text-box single-line" id="diachi" name="diachi" value="<?php if (isset($_SESSION['nv']['diaChi'])) echo $_SESSION['nv']['diaChi'];
-                                                                                                                        unset($_SESSION['nv']['diaChi']); ?>">
+                        <input type="text" class="form-control text-box single-line" id="diachi" name="diachi" value="<?php if (isset($_SESSION['sv']['diaChi'])) echo $_SESSION['sv']['diaChi'];
+                                                                                                                        unset($_SESSION['sv']['diaChi']); ?>">
                         <span class="text-danger"><?php if (isset($_SESSION['error']['diaChi'])) {
                                                         echo $_SESSION['error']['diaChi'];
                                                         unset($_SESSION['error']['diaChi']);
@@ -111,8 +111,8 @@
                 <div class="form-group1">
                     <label for="email" class="control-label col-md-4"><b>Email</b></label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control text-box single-line" id="email" name="email" value="<?php if (isset($_SESSION['nv']['email'])) echo $_SESSION['nv']['email'];
-                                                                                                                    unset($_SESSION['nv']['email']); ?>">
+                        <input type="text" class="form-control text-box single-line" id="email" name="email" value="<?php if (isset($_SESSION['sv']['email'])) echo $_SESSION['sv']['email'];
+                                                                                                                    unset($_SESSION['sv']['email']); ?>">
                         <span class="text-danger"><?php if (isset($_SESSION['error']['email'])) {
                                                         echo $_SESSION['error']['email'];
                                                         unset($_SESSION['error']['email']);
@@ -123,8 +123,8 @@
                 <div class="form-group1">
                     <label for="password" class="control-label col-md-4"><b>Mật khẩu</b></label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control text-box single-line" id="password" name="password" value="<?php if (isset($_SESSION['nv']['matKhau'])) echo $_SESSION['nv']['matKhau'];
-                                                                                                                            unset($_SESSION['nv']['matKhau']); ?>">
+                        <input type="text" class="form-control text-box single-line" id="password" name="password" value="<?php if (isset($_SESSION['sv']['matKhau'])) echo $_SESSION['sv']['matKhau'];
+                                                                                                                            unset($_SESSION['sv']['matKhau']); ?>">
                         <i style="font-size: small;">(*)Mật khẩu phải chứa ít nhất 8 ký tự, ít nhất 1 số, ít nhất 1 chữ cái viết hoa và ít nhất 1 chữ cái thường</i>
                         <br>
                         <span class="text-danger"><?php if (isset($_SESSION['error']['matKhau'])) {
@@ -137,8 +137,8 @@
                 <div class="form-group1">
                     <label for="sdt" class="control-label col-md-4"><b>Số điện thoại</b></label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control text-box single-line" id="sdt" name="sdt" value="<?php if (isset($_SESSION['nv']['soDienThoai'])) echo $_SESSION['nv']['soDienThoai'];
-                                                                                                                unset($_SESSION['nv']['soDienThoai']); ?>">
+                        <input type="text" class="form-control text-box single-line" id="sdt" name="sdt" value="<?php if (isset($_SESSION['sv']['soDienThoai'])) echo $_SESSION['sv']['soDienThoai'];
+                                                                                                                unset($_SESSION['sv']['soDienThoai']); ?>">
                         <span class="text-danger"><?php if (isset($_SESSION['error']['soDienThoai'])) {
                                                         echo $_SESSION['error']['soDienThoai'];
                                                         unset($_SESSION['error']['soDienThoai']);
@@ -147,30 +147,30 @@
                 </div>
 
                 <div class="form-group1">
-                    <label for="hinhanh" class="control-label col-md-4"><b>Ảnh nhân viên</b></label>
+                    <label for="hinhanh" class="control-label col-md-4"><b>Ảnh sinh viên</b></label>
                     <div class="col-md-8">
                         <input type="FILE" id="hinhanh" name="hinhanh">
                         <br>
-                        <span class="text-danger"><?php if (isset($_SESSION['error']['anhNV'])) {
-                                                        echo $_SESSION['error']['anhNV'];
-                                                        unset($_SESSION['error']['anhNV']);
+                        <span class="text-danger"><?php if (isset($_SESSION['error']['anhSV'])) {
+                                                        echo $_SESSION['error']['anhSV'];
+                                                        unset($_SESSION['error']['anhSV']);
                                                     } ?></span>
                     </div>
                 </div>
 
                 <div class="form-group1">
-                    <label for="nhomNV" class="control-label col-md-4"><b>Nhóm nhân viên</b></label>
+                    <label for="lop" class="control-label col-md-4"><b>Lớp</b></label>
                     <div class="col-md-8">
-                        <select name="nhomNV" class="form-control text-box single-line">
+                        <select name="lop" class="form-control text-box single-line">
                             <?php
-                            foreach ($data['listTenNhomNV'] as $nhomNV) {
-                                if ($nhomNV['IDNhom'] == $_SESSION['nv']['nnv']) {
+                            foreach ($data['listTenLop'] as $lop) {
+                                if ($lop['MaLop'] == $_SESSION['sv']['lop']) {
                                     $s = "selected";
-                                    unset($_SESSION['nv']['nnv']);
+                                    unset($_SESSION['sv']['lop']);
                                 } else {
                                     $s = "";
                                 }
-                                echo '<option ' . $s . ' value="' . $nhomNV['IDNhom'] . '" class = "form-control">' . $nhomNV['TenNhom'] . '</option>';
+                                echo '<option ' . $s . ' value="' . $lop['MaLop'] . '" class = "form-control">' . $lop['TenLop'] . '</option>';
                             }
                             ?>
                         </select>
@@ -182,7 +182,7 @@
                         <input type="submit" name="them" value="Thêm mới" class="btn btn-primary" />
                     </div>
                     <div class="col-md-offset-2 col-md-6 comback_div">
-                        <a class="comeback" href="nhanvien/index">Quay lại</a>
+                        <a class="comeback" href="sinhvien/index">Quay lại</a>
                     </div>
                 </div>
 

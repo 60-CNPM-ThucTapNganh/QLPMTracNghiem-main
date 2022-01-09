@@ -26,6 +26,13 @@
       }
   }
 
+  function validateTenSV($inputTenSV)
+  {
+      if (empty($inputTenSV)) {
+          $_SESSION['error']['tenSV'] = "Tên sinh viên không được để trống";
+      }
+  }
+
   function validateNgaySinh($inputNgaySinh)
   {
       if (empty($inputNgaySinh)) {
@@ -78,10 +85,18 @@
       }
 
   }
+
   function validateAnhNV($inputAnhNV)
   {
       if ($inputAnhNV == null) {
           $_SESSION['error']['anhNV'] = "Vui lòng chọn ảnh nhân viên";
+      }
+  }
+
+  function validateAnhSV($inputAnhSV)
+  {
+      if ($inputAnhSV == null) {
+          $_SESSION['error']['anhSV'] = "Vui lòng chọn ảnh sinh viên";
       }
   }
 
