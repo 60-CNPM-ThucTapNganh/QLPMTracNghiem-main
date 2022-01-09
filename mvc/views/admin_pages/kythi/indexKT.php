@@ -78,7 +78,6 @@
             <th class="row_head">STT</th>
             <th class="row_head">Tên kỳ thi</th>
             <th class="row_head">Thời gian làm bài</th>
-            <th class="row_head">Số câu hỏi</th>
             <th class="row_head">Môn học</th>
             <th class="row_head">Nhân viên</th>
             <th class="row_head">Chức năng</th>
@@ -91,7 +90,6 @@
                 <td><?php echo $i; ?></td>
                 <td><?php echo $item["TenKT"]; ?></td>
                 <td><?php echo $item["ThoiGian"] . "p" ?></td>
-                <td><?php echo $item["TongSoCau"] . " câu" ?></td>
                 <td><?php
 
                     foreach ($data['listTenMH'] as $monHoc) {

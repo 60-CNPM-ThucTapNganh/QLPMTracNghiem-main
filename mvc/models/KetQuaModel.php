@@ -11,9 +11,9 @@ class KetQuaModel extends DataBase
         return json_encode($arr);
     }
 
-    public function insert($soCauDung, $soCauSai, $soCauChuaChon, $diemSo)
+    public function insert($soCauDung, $soCauSai, $soCauChuaChon, $diemSo, $sinhvien)
     {
-        $qr = "INSERT INTO `ketqua` (`SoCauDung`, `SoCauSai`, `SoCauChuaChon`, `DiemSo`)  VALUES ('" . $soCauDung . "', '" . $soCauSai . "','" . $soCauChuaChon . "','" . $diemSo . "')";
+        $qr = "INSERT INTO `ketqua` (`SoCauDung`, `SoCauSai`, `SoCauChuaChon`, `DiemSo`, `maSV`)  VALUES ('" . $soCauDung . "', '" . $soCauSai . "','" . $soCauChuaChon . "','" . $diemSo . "','" . $sinhvien . "')";
         return mysqli_query($this->con, $qr);
     }
 }

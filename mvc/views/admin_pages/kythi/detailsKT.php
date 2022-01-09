@@ -89,10 +89,6 @@ if (isset($_SESSION['thongbao'])) {
                     <td>Thời gian đóng đề:</td>
                     <td><?php echo $data['kt']['ThoiGianKT'] ?></td>
                 </tr>
-                <tr>
-                    <td>Tổng số câu:</td>
-                    <td><?php echo $data['kt']['TongSoCau'] ?></td>
-                </tr>
 
             </table>
         </td>

@@ -17,12 +17,15 @@
     <meta name="generator" content="NukeViet v4.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta property="og:title" content="HOMITA Coffee &amp; Tea House - Real love with milktea">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="Bắt nguồn từ đam mê với các loại đồ uống có nguồn gốc từ trà, năm 2013, ông Huỳnh Quang Phúc - một cử nhân tốt nghiệp tại trường Đại học Toulouse 1 Capitole đã trở về quê...">
-    <meta property="og:site_name" content="HOMITA Coffee &amp; Tea House - Real love with milktea">
-    <meta property="og:url" content="https://www.homitatea.com/">
-    <link rel="canonical" href="https://www.homitatea.com/">
+    <meta name="description" content="This is the SEO meta description blurb that 
+    describes what the page is about. This is a site that helped me improve my 
+    programming skills and came into contact with the company I love.">
+    <meta property="og:type" content="Website" />
+    <meta property="og:title" content="Home" />
+    <meta property="og:description" content="Connect & Grow Your Business with the Power 
+    of the Encompass Platform" />
+    <meta property="og:url" content="http://sagetheme.local/index.php/encompass/" />
+    <meta property="og:image" content="https://i.upanh.org/2021/12/23/encompass-share.png" />
     <base href="<?php echo BASE; ?>">
 
 
@@ -46,25 +49,25 @@
         <div class="header-login absolute right-10">
             <?php if (isset($_SESSION['userClient'])) {
             ?>
-                <div class="absolute w-40 right-0 header-login">
+                <div class="absolute w-48 right-0 header-login">
                     <button onclick="myFunction()" class="dropbtn flex">
                         <p class="mt-1 pr-2 font-bold"><?php if (isset($_SESSION["userClient"])) echo $_SESSION["userClient"]["tenSV"]; ?></p>
                         <div class=" block h-8 w-8 rounded-full overflow-hidden border-2 border-gray-600 forcus:outline-none forcus:border-white">
                             <?php
                             if (isset($_SESSION["userClient"])) {
                                 $hinhAnh = $_SESSION["userClient"]["hinhAnh"];
-                                echo "<img class='w-full h-full object-cover' src='public/upload/nguoidung/$hinhAnh'> alt='ImgSV'";
+                                echo "<img alt='ImgSV' class='w-full h-full object-cover' src='public/upload/nguoidung/$hinhAnh'>";
                             }
                             ?>
                         </div>
                     </button>
-                    <div id="myDropdown" class="absolute dropdown-content hidden mt-2 w-48 z-100 bg-white rounded-lg shadow-xl py-2">
+                    <div id="myDropdown" class="absolute dropdown-content hidden mt-2 w-48 z-50 bg-white rounded-lg shadow-xl py-2">
                         <a href="./personal.php" class="block px-4 py-2 text-gray-800 hover:text-white">
                             <div class=" block h-40 w-40 rounded-full overflow-hidden border-2 border-gray-600 forcus:outline-none forcus:border-white">
                                 <?php
                                 if (isset($_SESSION["userClient"])) {
                                     $hinhAnh = $_SESSION["userClient"]["hinhAnh"];
-                                    echo "<img class='w-full h-full object-cover' src='public/upload/nguoidung/$hinhAnh'> alt='ImgSV'";
+                                    echo "<img alt='ImgSV' class='w-full h-full object-cover' src='public/upload/nguoidung/$hinhAnh'>";
                                 }
                                 ?>
                             </div>
@@ -89,7 +92,7 @@
 
         </div>
     </header>
-    <nav class="nav-pc relative flex row py-3 px-3 border-2">
+    <nav class="nav-pc relative z-40 flex row py-3 px-3 border-2">
         <div class="nav-logo">
             <a href="./home.php">
                 <img src="public/Client/assets/images/page-free.png" alt="" width="50px" height="50px">
@@ -111,16 +114,13 @@
                 <a href="MonHocClient/Index">Môn học</a>
             </li>
             <li class="nav-link-pc px-5 hover:text-gray-500">
+                <a href="KyThiClient/Index">Kỳ thi</a>
+            </li>
+            <li class="nav-link-pc px-5 hover:text-gray-500">
                 <a href="KetQua/Index">Kết quả</a>
             </li>
             <li class="nav-link-pc px-5 hover:text-gray-500">
                 <a href="CaNhanClient/Index">Trang cá nhân</a>
-            </li>
-            <li class="nav-link-pc px-5 hover:text-gray-500">
-                <a href="#">Hướng dẫn</a>
-            </li>
-            <li class="nav-link-pc px-5 hover:text-gray-500">
-                <a href="#">Vietnamese</a>
             </li>
         </ul>
         <label for="nav-mobile-input" class="nav__bars_btn cursor-pointer">
@@ -141,17 +141,14 @@
             <li class="nav-link-mobile px-5 py-2 hover:text-gray-500">
                 <a href="MonHocClient/Index">Môn học</a>
             </li>
+            <li class="nav-link-pc px-5 hover:text-gray-500">
+                <a href="KyThiClient/Index">Kỳ thi</a>
+            </li>
             <li class="nav-link-mobile px-5 py-2 hover:text-gray-500">
                 <a href="KetQua/Index">Kết quả</a>
             </li>
             <li class="nav-link-mobile px-5 py-2 hover:text-gray-500">
                 <a href="CaNhanClient/Index">Trang cá nhân</a>
-            </li>
-            <li class="nav-link-mobile px-5 py-2 hover:text-gray-500">
-                <a href="#">Hướng dẫn</a>
-            </li>
-            <li class="nav-link-mobile px-5 py-2 hover:text-gray-500">
-                <a href="#">Vietnamese</a>
             </li>
         </ul>
     </div>
@@ -176,19 +173,19 @@
                         <h4 class="pb-4">Liên kểt</h4>
                         <ul class="text-gray-500">
                             <li class="pb-4">
-                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="" class="hover:text-yellow-300">Trang chủ</a>
+                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="http://google.com/" class="hover:text-yellow-300">Trang chủ</a>
                             </li>
                             <li class="pb-4">
-                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="" class="hover:text-yellow-300">Thông tin</a>
+                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="http://google.com/" class="hover:text-yellow-300">Thông tin</a>
                             </li>
                             <li class="pb-4">
-                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="" class="hover:text-yellow-300">Dịch vụ</a>
+                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="http://google.com/" class="hover:text-yellow-300">Dịch vụ</a>
                             </li>
                             <li class="pb-4">
-                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="" class="hover:text-yellow-300">Điều khoản</a>
+                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="http://google.com/" class="hover:text-yellow-300">Điều khoản</a>
                             </li>
                             <li class="pb-4">
-                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="" class="hover:text-yellow-300">Chính sách bảo mật</a>
+                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="http://google.com/" class="hover:text-yellow-300">Chính sách bảo mật</a>
                             </li>
                         </ul>
                     </div>
@@ -196,19 +193,19 @@
                         <h4 class="pb-4">Dịch vụ của chúng tôi</h4>
                         <ul class="text-gray-500">
                             <li class="pb-4">
-                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="" class="hover:text-yellow-300">Thiết kế Web</a>
+                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="http://google.com/" class="hover:text-yellow-300">Thiết kế Web</a>
                             </li>
                             <li class="pb-4">
-                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="" class="hover:text-yellow-300">Phát triển Web</a>
+                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="http://google.com/" class="hover:text-yellow-300">Phát triển Web</a>
                             </li>
                             <li class="pb-4">
-                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="" class="hover:text-yellow-300">Quản lý sản phẩm</a>
+                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="http://google.com/" class="hover:text-yellow-300">Quản lý sản phẩm</a>
                             </li>
                             <li class="pb-4">
-                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="" class="hover:text-yellow-300">Quản lý</a>
+                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="http://google.com/" class="hover:text-yellow-300">Quản lý</a>
                             </li>
                             <li class="pb-4">
-                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="" class="hover:text-yellow-300">Thiết kế đồ họa</a>
+                                <ion-icon name="chevron-forward-sharp" class="text-yellow-500"></ion-icon><a href="http://google.com/" class="hover:text-yellow-300">Thiết kế đồ họa</a>
                             </li>
                         </ul>
                     </div>

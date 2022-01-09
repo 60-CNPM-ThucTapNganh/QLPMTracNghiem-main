@@ -26,6 +26,18 @@ class ChiTietKyThiModel extends DataBase {
         return json_encode($arr);
     } 
 
+    // public function getKyThiClientById($id)
+    // {
+    //     $qr = "SELECT * FROM kythi_cauhoi ctkt, kythi kt WHERE ctkt.MaKT = kt.MaKT AND kythi_cauhoi.MaKT = '$id'";
+    //     $rows = mysqli_query($this->con, $qr);
+    //     $arr = array();
+    //     while($row = mysqli_fetch_array($rows)) {
+    //         $arr[] = $row;
+    //     }
+    //     return json_encode($arr);
+    // }
+
+
     public function checkPK($maKT, $maCH) {
         $qr = "SELECT * FROM kythi_cauhoi
         WHERE MaKT = '$maKT' AND MaCH = '$maCH'";

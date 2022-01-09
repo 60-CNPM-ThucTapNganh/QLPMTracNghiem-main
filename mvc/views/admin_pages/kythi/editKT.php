@@ -85,13 +85,6 @@ if (isset($_SESSION['kt']['thoiGianKT'])) {
 $string_to_date_tgkt=$d=strtotime($thoiGianKT);
 $thoiGianKTNew=Date('Y-m-d\TH:i',$string_to_date_tgkt);
 
-if (isset($_SESSION['kt']['tongSoCau'])) {
-    $tongSoCau = $_SESSION['kt']['tongSoCau'];
-    unset($_SESSION['kt']['tongSoCau']);
-} else {
-    $tongSoCau = $data['kt']['TongSoCau'];
-}
-
 if (isset($_SESSION['kt']['mh'])) {
     $maMH = $_SESSION['kt']['mh'];
     unset($_SESSION['kt']['mhd']);
@@ -159,17 +152,6 @@ if (isset($_SESSION['kt']['nv'])) {
                         <span class="text-danger"><?php if (isset($_SESSION['error']['thoiGianKT'])) {
                                                         echo $_SESSION['error']['thoiGianKT'];
                                                         unset($_SESSION['error']['thoiGianKT']);
-                                                    } ?></span>
-                    </div>
-                </div>
-
-                <div class="form-group1">
-                    <label for="tongsocau" class="control-label col-md-4"><b>Tổng số câu</b></label>
-                    <div class="col-md-8">
-                        <input type="text" class="form-control text-box single-line" id="tongsocau" name="tongsocau" value="<?php echo $tongSoCau; ?>">
-                        <span class="text-danger"><?php if (isset($_SESSION['error']['tongSoCau'])) {
-                                                        echo $_SESSION['error']['tongSoCau'];
-                                                        unset($_SESSION['error']['tongSoCau']);
                                                     } ?></span>
                     </div>
                 </div>

@@ -110,18 +110,6 @@
                                                     } ?></span>
                     </div>
                 </div>
-
-                <div class="form-group1">
-                    <label for="tongsocau" class="control-label col-md-4"><b>Tổng số câu: </b></label>
-                    <div class="col-md-8">
-                        <input type="number" min= "1" class="form-control text-box single-line" id="tongsocau" name="tongsocau" value="<?php if (isset($_SESSION['kt']['tongSoCau'])) echo $_SESSION['kt']['tongSoCau'];
-                                                                                                                        unset($_SESSION['kt']['tongSoCau']); ?>">
-                        <span class="text-danger"><?php if (isset($_SESSION['error']['tongSoCau'])) {
-                                                        echo $_SESSION['error']['tongSoCau'];
-                                                        unset($_SESSION['error']['tongSoCau']);
-                                                    } ?></span>
-                    </div>
-                </div>
                   
                 <div class="form-group1">
                     <label for="monhoc" class="control-label col-md-4"><b>Môn học: </b></label>

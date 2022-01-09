@@ -47,6 +47,7 @@ class KyThi extends Controller
         );
     }
 
+
     function Create()
     {
         $listTenMH = json_decode($this->mhModel->listAll(), true);
@@ -75,7 +76,6 @@ class KyThi extends Controller
             $thoigian = $_POST['thoigian'];
             $thoigianBD = $_POST['thoigianBD'];
             $thoigianKT = $_POST['thoigianKT'];
-            $tongsocau = $_POST['tongsocau'];
             $nhanvien = json_decode($this->nvModel->getNhanVienById($_SESSION["user"]["maNV"]), true);
             $monhoc = $_POST['monhoc'];
 
@@ -85,14 +85,13 @@ class KyThi extends Controller
                     'thoiGian' => $thoigian,
                     'thoiGianBD' => $thoigianBD,
                     'thoiGianKT' => $thoigianKT,
-                    'tongSoCau' => $tongsocau,
                     'nv' => $nhanvien,
                     'mh' => $monhoc
                 ];
                 return $this->redirectTo("KyThi", "Create");
             } else {
                 $save = $this->model("KyThiModel");
-                $save->insert($makt, $tenkt, $thoigian, $thoigianBD, $thoigianKT, $tongsocau, $_SESSION["user"]["maNV"], $monhoc);
+                $save->insert($makt, $tenkt, $thoigian, $thoigianBD, $thoigianKT, $_SESSION["user"]["maNV"], $monhoc);
                 $_SESSION['thongbao'] = "Thêm mới kỳ thi thành công";
             }
         }
@@ -126,7 +125,6 @@ class KyThi extends Controller
             $thoigian = $_POST['thoigian'];
             $thoigianBD = $_POST['thoigianBD'];
             $thoigianKT = $_POST['thoigianKT'];
-            $tongsocau = $_POST['tongsocau'];
             $nhanvien = json_decode($this->nvModel->getNhanVienById($_SESSION["user"]["maNV"]), true);
             $monhoc = $_POST['monhoc'];
             if (isset($_SESSION['error']) && count($_SESSION['error']) > 0) {
@@ -135,14 +133,13 @@ class KyThi extends Controller
                     'thoiGian' => $thoigian,
                     'thoiGianBD' => $thoigianBD,
                     'thoiGianKT' => $thoigianKT,
-                    'tongSoCau' => $tongsocau,
                     'nv' => $nhanvien,
                     'mh' => $monhoc
                 ];
                 return $this->redirectTo("KyThi", "Edit", ['id' => $makt]);
             }
             else {
-                $this->ktModel->update($makt, $tenkt, $thoigian, $thoigianBD, $thoigianKT, $tongsocau, $_SESSION["user"]["maNV"], $monhoc);
+                $this->ktModel->update($makt, $tenkt, $thoigian, $thoigianBD, $thoigianKT, $_SESSION["user"]["maNV"], $monhoc);
                 $_SESSION['thongbao'] = "Cập nhật thông tin thành công";
             }
         } 
