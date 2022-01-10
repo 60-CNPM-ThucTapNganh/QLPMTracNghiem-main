@@ -8,22 +8,22 @@
                     <div class="image-slider">
                         <div class="image-item">
                             <div class="image">
-                            <img src="https://i.pinimg.com/originals/34/67/c4/3467c4f35d438839fc9499306c139d3e.jpg" alt="slider1"/>
+                            <img src="public/Client/assets/images/slide0.jpg" alt="slider0"/>
                             </div>
                         </div>
                         <div class="image-item">
                             <div class="image">
-                            <img src="https://topchiase24h.com/wp-content/uploads/2019/07/anh-bia-lien-quan-den-hoc-tap-hoc-hanh-thi-cu.jpg" alt="slider2" width="700px" height="300px" />
+                            <img src="public/Client/assets/images/slider1.jpg" alt="slider1" width="700px" height="300px" />
                             </div>
                         </div>
                         <div class="image-item">
                             <div class="image">
-                            <img src="https://topchiase24h.com/wp-content/uploads/2019/07/anh-bia-lien-quan-den-hoc-tap-hoc-hanh-thi-cu-2.jpg" alt="slider3" width="700px" height="300px"/>
+                            <img src="public/Client/assets/images/slider2.jpg" alt="slider2" width="700px" height="300px"/>
                             </div>
                         </div>
                         <div class="image-item">
                             <div class="image">
-                            <img src="https://camnang24h.net/wp-content/uploads/2018/07/anh-bia-facebook-lien-quan-den-hoc-hanh-va-thi-cu-an-tuong-22.jpg" alt="slider4"/>
+                            <img src="public/Client/assets/images/slide3.jpg" alt="slider3"/>
                             </div>
                         </div>
                     </div>
@@ -64,12 +64,10 @@
                 <div class="text-sm leading-loose text-[#9191B4] font-normal dark:text-white">
                 <div class="image-item">
                     <div class="image">
-                        <img src="https://lh5.googleusercontent.com/-fSpj9vePq9Y/Vlml2HGi3_I/AAAAAAAADN0/p73vs84HNjU/s1600/anh-bia-on-thi-hoc-tap-2.jpg" height="300px" alt="slider4"/>
+                        <img src="public/Client/assets/images/mon.jpg" height="300px" alt="image"/>
                     </div>
                     </div>
                 </div>
-
-                
                 </div>
             </div>
         </div>
@@ -78,7 +76,7 @@
                 <div class="text-sm leading-loose text-[#9191B4] font-normal dark:text-white">
                 <div class="image-item">
                     <div class="image">
-                        <img src="https://i.pinimg.com/736x/52/4f/f5/524ff58485f6052eb1f5a586937f00de--graduation-caps-creative-people.jpg" height="300px" alt="slider4"/>
+                        <img src="public/Client/assets/images/mu.jpg" height="300px" alt="slider4"/>
                     </div>
                     </div>
                 </div>
@@ -95,7 +93,7 @@
                 <div class="text-sm leading-loose text-[#9191B4] font-normal dark:text-white">
                 <div class="image-item">
                     <div class="image">
-                        <img src="https://ketoanducminh.edu.vn/uploads/News/pic/b%C3%A1o_c%C3%A1o_th%E1%BB%B1c_h%C3%A0nh.jpg" height="200px" alt="slider4"/>
+                        <img src="public/Client/assets/images/sach.jpg" height="200px" alt="slider4"/>
                     </div>
                     </div>
                 </div>
