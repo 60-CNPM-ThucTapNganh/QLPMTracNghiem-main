@@ -27,7 +27,7 @@
     <meta property="og:url" content="http://sagetheme.local/index.php/encompass/" />
     <meta property="og:image" content="https://i.upanh.org/2021/12/23/encompass-share.png" />
     <base href="<?php echo BASE; ?>">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
     <link rel="stylesheet" href="public/Client/assets/style/app.css?v=<?php echo time(); ?>">
     <script src="https://code.jquery.com/jquery-latest.js"></script>
@@ -240,6 +240,9 @@
             </div>
         </div>
     </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
 
 </html>
