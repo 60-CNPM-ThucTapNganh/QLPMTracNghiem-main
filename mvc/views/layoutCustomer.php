@@ -29,6 +29,7 @@
     <meta property="og:image" content="https://i.upanh.org/2021/12/23/encompass-share.png" />
     <base href="<?php echo BASE; ?>">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
     <link rel="stylesheet" href="public/Client/assets/style/app.css?v=<?php echo time(); ?>">
     <script src="https://code.jquery.com/jquery-latest.js"></script>
@@ -128,8 +129,8 @@ if (isset($_POST['submit']))
                         <br>
                         <hr>
                     </a>
-                    <a href="./personal.php"
-                        class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">Cài đặt</a>
+                    <a href="CaNhanClient/Index"
+                        class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">Thông tin tài khoản</a>
                     <hr>
                     <a href="loginClient/logout"
                         class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">Đăng xuất</a>
@@ -313,6 +314,9 @@ if (isset($_POST['submit']))
             </div>
         </div>
     </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
 
 </html>

@@ -23,7 +23,7 @@ class TracNghiem extends Controller{
         $kt = json_decode($this->ktModel->getKyThiById($id), true);
         $listMH = json_decode($this->mhModel->listAll(), true);
         // echo '<pre>';
-        // print_r($kt);
+        // print_r($listTN);
         // echo '</pre>';
         $this->view("layoutCustomer", [
             'page' => 'indexTracNghiem',
@@ -35,12 +35,15 @@ class TracNghiem extends Controller{
 
     public function SaveResult() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
             $tongSoCau = 0;
             $soCauDung = 0;
             $soCauSai = 0;
             $soCauChuaChon = 0;
             $diemSo = 0;
+
+
+            $maKT = $_POST['MaKT'];
+            unset($_POST['MaKT']);
 
             foreach($_POST as $maCH => $maDA) {
                 if($maDA != '') {
@@ -52,12 +55,13 @@ class TracNghiem extends Controller{
                 } else {
                     $soCauChuaChon++;
                 }
+                $this->model("LichSuBaiLamModel")->insert($maKT, $_SESSION["userClient"]["maSV"], $maCH, $maDA);
             }
             $tongSoCau = $soCauDung + $soCauSai + $soCauChuaChon;
             $diemSo = round((10 / $tongSoCau * $soCauDung) * 100) / 100;
 
             $save = $this->model("KetQuaModel");
-            $save->insert($soCauDung, $soCauSai, $soCauChuaChon, $diemSo, $_SESSION["userClient"]["maSV"]);
+            $save->insert($soCauDung, $soCauSai, $soCauChuaChon, $diemSo, $_SESSION["userClient"]["maSV"], $maKT);
         }  
         return $this->redirectTo("KetQua", "Index");
     }
