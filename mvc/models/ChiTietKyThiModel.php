@@ -4,8 +4,8 @@ class ChiTietKyThiModel extends DataBase {
     public function getCTKT()
     {
         $qr = "SELECT * FROM kythi_cauhoi ctkt, kythi kt, cauhoi ch 
-        WHERE ctkt.MaKT = kt.MaKT AND ctkt.MaCH = ch.MaCH
-        ORDER BY RAND()";
+        WHERE ctkt.MaKT = kt.MaKT AND ctkt.MaCH = ch.MaCH";
+        // ORDER BY RAND()
         $rows = mysqli_query($this->con, $qr);
         $arr = array();
         while($row = mysqli_fetch_assoc($rows)) {

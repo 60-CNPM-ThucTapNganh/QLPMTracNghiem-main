@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 09, 2022 lúc 12:32 PM
+-- Thời gian đã tạo: Th1 11, 2022 lúc 06:09 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.3.30
 
@@ -110,22 +110,22 @@ CREATE TABLE `ketqua` (
   `SoCauSai` int(11) NOT NULL,
   `SoCauChuaChon` int(11) NOT NULL,
   `DiemSo` double NOT NULL,
-  `maSV` varchar(10) DEFAULT NULL
+  `maSV` varchar(10) DEFAULT NULL,
+  `MaKT` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `ketqua`
 --
 
-INSERT INTO `ketqua` (`id`, `SoCauDung`, `SoCauSai`, `SoCauChuaChon`, `DiemSo`, `maSV`) VALUES
-(14, 3, 0, 0, 10, 'SV0001'),
-(16, 3, 0, 0, 10, 'SV0001'),
-(17, 2, 1, 0, 6.67, 'SV0001'),
-(20, 0, 0, 3, 0, 'SV0001'),
-(23, 2, 1, 0, 6.67, 'SV0001'),
-(24, 0, 1, 2, 0, 'SV0002'),
-(25, 1, 0, 2, 3.33, 'SV0002'),
-(27, 1, 0, 0, 10, 'SV0002');
+INSERT INTO `ketqua` (`id`, `SoCauDung`, `SoCauSai`, `SoCauChuaChon`, `DiemSo`, `maSV`, `MaKT`) VALUES
+(36, 0, 3, 0, 0, 'SV0001', 'KT0001'),
+(37, 3, 0, 0, 10, 'SV0001', 'KT0001'),
+(38, 0, 0, 1, 0, 'SV0001', 'KT0002'),
+(39, 0, 0, 3, 0, 'SV0001', 'KT0001'),
+(40, 3, 0, 0, 10, 'SV0001', 'KT0001'),
+(41, 1, 2, 0, 3.33, 'SV0001', 'KT0001'),
+(42, 0, 0, 3, 0, 'SV0001', 'KT0001');
 
 -- --------------------------------------------------------
 
@@ -148,7 +148,7 @@ CREATE TABLE `kythi` (
 --
 
 INSERT INTO `kythi` (`MaKT`, `TenKT`, `ThoiGian`, `ThoiGianBD`, `ThoiGianKT`, `maNV`, `MaMH`) VALUES
-('KT0001', 'Kiểm tra giữa kì PHP', 15, '2022-01-03 17:35:00.000', '2022-01-03 17:54:00.000', 'NV0001', 'PTPMMNM'),
+('KT0001', 'Kiểm tra giữa kì PHP', 1, '2022-01-03 17:35:00.000', '2022-01-03 17:54:00.000', 'NV0001', 'PTPMMNM'),
 ('KT0002', 'Kiểm tra 15p THCS', 15, '2022-01-03 18:00:00.000', '2022-01-03 18:45:00.000', 'NV0002', 'THCS'),
 ('KT0003', 'Kiểm tra giữa kì thiết kế web', 60, '2022-01-03 18:26:00.000', '2022-01-03 19:26:00.000', 'NV0003', 'TKW');
 
@@ -173,6 +173,29 @@ INSERT INTO `kythi_cauhoi` (`MaKT`, `MaCH`, `GhiChu`) VALUES
 ('KT0001', 'CH0002', NULL),
 ('KT0001', 'CH0003', NULL),
 ('KT0002', 'CH0005', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `lichsubailam`
+--
+
+CREATE TABLE `lichsubailam` (
+  `MaKT` varchar(20) NOT NULL,
+  `maSV` varchar(10) NOT NULL,
+  `MaCH` varchar(20) NOT NULL,
+  `MaDA` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `lichsubailam`
+--
+
+INSERT INTO `lichsubailam` (`MaKT`, `maSV`, `MaCH`, `MaDA`) VALUES
+('KT0001', 'SV0001', 'CH0001', ''),
+('KT0001', 'SV0001', 'CH0002', ''),
+('KT0001', 'SV0001', 'CH0003', ''),
+('KT0002', 'SV0001', 'CH0005', '');
 
 -- --------------------------------------------------------
 
@@ -340,7 +363,8 @@ ALTER TABLE `dapan`
 --
 ALTER TABLE `ketqua`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `kq_sv_fk` (`maSV`);
+  ADD KEY `kq_sv_fk` (`maSV`),
+  ADD KEY `kq_kt_fk` (`MaKT`);
 
 --
 -- Chỉ mục cho bảng `kythi`
@@ -356,6 +380,13 @@ ALTER TABLE `kythi`
 ALTER TABLE `kythi_cauhoi`
   ADD PRIMARY KEY (`MaKT`,`MaCH`),
   ADD KEY `ktch_ch_fk` (`MaCH`);
+
+--
+-- Chỉ mục cho bảng `lichsubailam`
+--
+ALTER TABLE `lichsubailam`
+  ADD PRIMARY KEY (`MaKT`,`maSV`,`MaCH`) USING BTREE,
+  ADD KEY `lslb_ch_fk` (`MaCH`);
 
 --
 -- Chỉ mục cho bảng `lop`
@@ -403,7 +434,7 @@ ALTER TABLE `sinhvien`
 -- AUTO_INCREMENT cho bảng `ketqua`
 --
 ALTER TABLE `ketqua`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -432,6 +463,7 @@ ALTER TABLE `dapan`
 -- Các ràng buộc cho bảng `ketqua`
 --
 ALTER TABLE `ketqua`
+  ADD CONSTRAINT `kq_kt_fk` FOREIGN KEY (`MaKT`) REFERENCES `kythi` (`MaKT`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `kq_sv_fk` FOREIGN KEY (`maSV`) REFERENCES `sinhvien` (`maSV`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
@@ -447,6 +479,13 @@ ALTER TABLE `kythi`
 ALTER TABLE `kythi_cauhoi`
   ADD CONSTRAINT `ktch_ch_fk` FOREIGN KEY (`MaCH`) REFERENCES `cauhoi` (`MaCH`),
   ADD CONSTRAINT `ktch_kt_fk` FOREIGN KEY (`MaKT`) REFERENCES `kythi` (`MaKT`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `lichsubailam`
+--
+ALTER TABLE `lichsubailam`
+  ADD CONSTRAINT `lslb_ch_fk` FOREIGN KEY (`MaCH`) REFERENCES `cauhoi` (`MaCH`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `lslb_kt_fk` FOREIGN KEY (`MaKT`) REFERENCES `kythi` (`MaKT`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `nhanvien`

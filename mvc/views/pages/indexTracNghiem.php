@@ -9,6 +9,7 @@
           $numQuestions = 1;
           foreach ($data["kt"] as $items) {
             echo '<h2 class="ml-32 pt-5 font-bold">' . 'Tên kỳ thi: ' . $items["TenKT"] . '</h2>';
+            echo '<input type="hidden" name="MaKT" value="' . $items["MaKT"] . '" >';
             foreach ($data['listMH'] as $monHoc) {
               if ($items["MaMH"] == $monHoc['MaMH']) {
                 echo '<p class="ml-32 font-bold">' . 'Môn học: ' . $monHoc['TenMH'] . '</p>';
