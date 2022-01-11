@@ -750,7 +750,7 @@ class PHPMailer
      *
      * @var string
      */
-    const VERSION = '6.5.1';
+    const VERSION = '6.5.3';
 
     /**
      * Error severity: message only, continue processing.
@@ -1185,6 +1185,7 @@ class PHPMailer
      *
      * @param string $addrstr The address list string
      * @param bool   $useimap Whether to use the IMAP extension to parse the list
+     * @param string $charset The charset to use when decoding the address list string.
      *
      * @return array
      */
@@ -1451,7 +1452,12 @@ class PHPMailer
                 $errorcode = 0;
                 if (defined('INTL_IDNA_VARIANT_UTS46')) {
                     //Use the current punycode standard (appeared in PHP 7.2)
-                    $punycode = idn_to_ascii($domain, $errorcode, \INTL_IDNA_VARIANT_UTS46);
+                    $punycode = idn_to_ascii(
+                        $domain,
+                        \IDNA_DEFAULT | \IDNA_USE_STD3_RULES | \IDNA_CHECK_BIDI |
+                            \IDNA_CHECK_CONTEXTJ | \IDNA_NONTRANSITIONAL_TO_ASCII,
+                        \INTL_IDNA_VARIANT_UTS46
+                    );
                 } elseif (defined('INTL_IDNA_VARIANT_2003')) {
                     //Fall back to this old, deprecated/removed encoding
                     $punycode = idn_to_ascii($domain, $errorcode, \INTL_IDNA_VARIANT_2003);
@@ -1737,7 +1743,7 @@ class PHPMailer
                 fwrite($mail, $header);
                 fwrite($mail, $body);
                 $result = pclose($mail);
-                $addrinfo = static::parseAddresses($toAddr, true, $this->charSet);
+                $addrinfo = static::parseAddresses($toAddr, true, $this->CharSet);
                 $this->doCallback(
                     ($result === 0),
                     [[$addrinfo['address'], $addrinfo['name']]],
@@ -1900,7 +1906,7 @@ class PHPMailer
         if ($this->SingleTo && count($toArr) > 1) {
             foreach ($toArr as $toAddr) {
                 $result = $this->mailPassthru($toAddr, $this->Subject, $body, $header, $params);
-                $addrinfo = static::parseAddresses($toAddr, true, $this->charSet);
+                $addrinfo = static::parseAddresses($toAddr, true, $this->CharSet);
                 $this->doCallback(
                     $result,
                     [[$addrinfo['address'], $addrinfo['name']]],
