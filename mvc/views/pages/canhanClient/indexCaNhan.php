@@ -8,18 +8,18 @@ if (isset($_SESSION['thongbao'])) {
 ?>
 
 <style>
-.col-2 td {
-    padding: 12px 8px 12px 8px;
-    border: 1px solid #F5F5F5;
-    font-weight: bold;
-}
-.content {
+    .col-2 td {
+        padding: 12px 8px 12px 8px;
+        border: 1px solid #F5F5F5;
+        font-weight: bold;
+    }
+
+    .content {
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         padding: 20px;
         border-radius: 8px;
     }
 </style>
-
 <main>
     <form action="" method="">
 
@@ -27,8 +27,9 @@ if (isset($_SESSION['thongbao'])) {
             <div class="">
                 <h3 class="text-2xl	font-bold text-center py-4 text-gray-900">THÔNG TIN CÁ NHÂN</h3>
             </div>
-            <div class="content row flex justify-center mx-auto max-w-4xl w-full whitespace-nowrap rounded-lg bg-white ">
- 
+            <div
+                class="content row flex justify-center mx-auto max-w-4xl w-full whitespace-nowrap rounded-lg bg-white ">
+
                 <table class="col-1 w-1/5 mr-20" style="">
                     <tr>
                         <td>

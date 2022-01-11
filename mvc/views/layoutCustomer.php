@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
     <meta name="description"
-        content="Bắt nguồn từ đam mê với các loại đồ uống có nguồn gốc từ trà, năm 2013, ông Huỳnh Quang Phúc - một cử nhân tốt nghiệp tại trường Đại học Toulouse 1 Capitole đã trở về quê...">
+        content="">
     <meta name="keywords" content="homita">
     <meta name="news_keywords" content="homita">
-    <meta name="author" content="HOMITA Coffee & Tea House - Real love with milktea">
+    <meta name="author" content="">
     <meta name="copyright" content="HOMITA Coffee & Tea House - Real love with milktea [support@homitatea.com]">
     <meta name="robots" content="index, archive, follow, noodp">
     <meta name="googlebot" content="index,archive,follow,noodp">
@@ -59,7 +59,7 @@ if (isset($_POST['submit']))
             $mail->isSMTP();                                          
             $mail->Host       = 'smtp.gmail.com';                   
             $mail->SMTPAuth   = true;                                 
-            $mail->Username   = 'killerbee0088@gmail.com';       //Mail admin           
+            $mail->Username   = 'killerbee0088@gmail.com';   //Mail admin           
             $mail->Password   = '011235813aA';                             
             $mail->SMTPSecure = 'tls';           
             $mail->Port       = '587';   
@@ -72,7 +72,7 @@ if (isset($_POST['submit']))
             $mail->Body    = 'Cảm ơn bạn đã đăng ký. Chúng tôi xin gửi một số tư liệu học tập cho bạn';
     
             if( $mail->send())
-            echo 'Message has been sent';
+                echo 'Message has been sent';
             else{
                 echo "Error";
             }
@@ -83,9 +83,7 @@ if (isset($_POST['submit']))
         }
     
 }
-
-  ?>
-
+?>
 
 <body>
     <header class="header-info flex h-14 py-3 px-6 bg-blue-400">
@@ -283,9 +281,9 @@ if (isset($_POST['submit']))
                         </p>
                         <form method="POST" action="" class="flex flex-row flex-wrap">
                             <input type="text" name="email" id="email"
-                                class="text-gray-500 w-2/3 p-2 focus:border-yellow-500" placeholder="Nhap email..."
+                                class="text-gray-500 w-2/3 p-2 focus:border-yellow-500" placeholder="Nhập email"
                                 value="">
-                                <?php if(isset($mess)) echo $mess?>
+                            <?php if(isset($mess)) echo $mess?>
                             <input type="submit" name="submit" value="Đăng ký"
                                 class="p-2 w-1/3 bg-yellow-500 text-white hover:bg-yellow-600">
                         </form>
