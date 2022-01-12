@@ -30,7 +30,7 @@ if (isset($_SESSION['thongbao'])) {
             <div
                 class="content row flex justify-center mx-auto max-w-4xl w-full whitespace-nowrap rounded-lg bg-white ">
 
-                <table class="col-1 w-1/5 mr-20" style="">
+                <table class="col-1 w-1/5 mr-20">
                     <tr>
                         <td>
                             <div
