@@ -45,13 +45,13 @@ class SinhVienModel extends DataBase {
     {
         // Có update hình ảnh
         if($hinhAnh != null){
-            $qr = "UPDATE nhanvien SET tenSV = '$tenSV',
-            ngaySinh = '$ngaySinh', gioiTinh = '$gioiTinh', diaChi = '$diaChi',
+            $qr = "UPDATE sinhvien SET tenSV = '$tenSV',
+            gioiTinh = '$gioiTinh', ngaySinh = '$ngaySinh', diaChi = '$diaChi',
             hinhAnh = '$hinhAnh', sdt ='$sdt', MaLop = '$lop' WHERE maSV = '$maSV'";
         }
         else {
-            $qr = "UPDATE nhanvien SET tenSV = '$tenSV',
-            ngaySinh = '$ngaySinh', gioiTinh = '$gioiTinh', diaChi = '$diaChi',
+            $qr = "UPDATE sinhvien SET tenSV = '$tenSV',
+            gioiTinh = '$gioiTinh', ngaySinh = '$ngaySinh', diaChi = '$diaChi',
             sdt ='$sdt', MaLop = '$lop' WHERE maSV = '$maSV'";
         }
         return mysqli_query($this->con, $qr);

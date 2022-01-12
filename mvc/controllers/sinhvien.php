@@ -166,7 +166,7 @@ class SinhVien extends Controller
             $diaChi = $_POST['diaChi'];
             $sdt = $_POST['sdt'];
             $lop = $_POST['lop'];
-
+            echo $lop;
             validateTenSV($tenSV);
             validateNgaySinh($ngaySinh);
             validateDiaChi($diaChi);
@@ -187,9 +187,9 @@ class SinhVien extends Controller
                 $hinh = $_FILES['hinhAnh'];
                 $tenAnh = $hinh['name'];
                 move_uploaded_file($hinh['tmp_name'], "public/upload/nguoidung/" . $tenAnh);
-                $this->nvModel->update($maSV, $tenSV, $gioiTinh, $ngaySinh, $diaChi, $sdt, $tenAnh, $lop);
+                $this->svModel->update($maSV, $tenSV, $gioiTinh, $ngaySinh, $diaChi, $sdt, $tenAnh, $lop);
             } else {
-                $this->nvModel->update($maSV, $tenSV, $gioiTinh, $ngaySinh, $diaChi, $sdt, null, $lop);
+                $this->svModel->update($maSV, $tenSV, $gioiTinh, $ngaySinh, $diaChi, $sdt, null, $lop);
             }
 
             // if (mysqli_affected_rows($result) == 1 || mysqli_affected_rows($result) == 0) {
