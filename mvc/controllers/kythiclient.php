@@ -18,13 +18,14 @@ class KyThiClient extends Controller
         $listKT = json_decode($this->ktModel->listAll(), true);
         $listTenMH = json_decode($this->mhModel->listAll(), true);
         $NV = json_decode($this->nvModel->getNV(), true);
+
         $this->view(
             "layoutCustomer",
             [
                 "page" => "indexKyThi",
                 'listKT' => $listKT,
                 'listTenMH' => $listTenMH,
-                'NV' => $NV
+                'NV' => $NV,
             ]
         );
     }

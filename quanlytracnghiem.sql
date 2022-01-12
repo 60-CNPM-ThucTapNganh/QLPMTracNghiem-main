@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 11, 2022 lúc 06:09 PM
+-- Thời gian đã tạo: Th1 12, 2022 lúc 04:49 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.3.30
 
@@ -61,7 +61,8 @@ CREATE TABLE `danhsachquyen` (
 --
 
 INSERT INTO `danhsachquyen` (`IDNhom`, `IDQuyen`, `GhiChu`) VALUES
-('GIANGVIEN', 'QUANLYDANHMUC', NULL);
+('GIANGVIEN', 'QUANLYDANHMUC', NULL),
+('GIANGVIEN', 'QUANLYSINHVIEN', NULL);
 
 -- --------------------------------------------------------
 
@@ -119,13 +120,7 @@ CREATE TABLE `ketqua` (
 --
 
 INSERT INTO `ketqua` (`id`, `SoCauDung`, `SoCauSai`, `SoCauChuaChon`, `DiemSo`, `maSV`, `MaKT`) VALUES
-(36, 0, 3, 0, 0, 'SV0001', 'KT0001'),
-(37, 3, 0, 0, 10, 'SV0001', 'KT0001'),
-(38, 0, 0, 1, 0, 'SV0001', 'KT0002'),
-(39, 0, 0, 3, 0, 'SV0001', 'KT0001'),
-(40, 3, 0, 0, 10, 'SV0001', 'KT0001'),
-(41, 1, 2, 0, 3.33, 'SV0001', 'KT0001'),
-(42, 0, 0, 3, 0, 'SV0001', 'KT0001');
+(43, 2, 1, 0, 6.67, 'SV0001', 'KT0001');
 
 -- --------------------------------------------------------
 
@@ -192,9 +187,9 @@ CREATE TABLE `lichsubailam` (
 --
 
 INSERT INTO `lichsubailam` (`MaKT`, `maSV`, `MaCH`, `MaDA`) VALUES
-('KT0001', 'SV0001', 'CH0001', ''),
-('KT0001', 'SV0001', 'CH0002', ''),
-('KT0001', 'SV0001', 'CH0003', ''),
+('KT0001', 'SV0001', 'CH0001', 'DA0002'),
+('KT0001', 'SV0001', 'CH0002', 'DA0008'),
+('KT0001', 'SV0001', 'CH0003', 'DA0009'),
 ('KT0002', 'SV0001', 'CH0005', '');
 
 -- --------------------------------------------------------
@@ -265,8 +260,8 @@ INSERT INTO `nhanvien` (`maNV`, `tenNV`, `gioiTinh`, `ngaySinh`, `diaChi`, `emai
 ('NV0001', 'Nguyễn Văn Trí', 1, '2000-10-17', 'Cam Ranh', 'tri@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '0365062796', 'tri_avatar.jpg', 'ADMIN'),
 ('NV0002', 'Hoàng Thanh Sơn', 1, '2000-04-07', 'Cam Lâm', 'sonhoang.070400@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '0358405987', 'son_avatar.PNG', 'ADMIN'),
 ('NV0003', 'Trương Thị Thùy Trang', 0, '2000-03-30', 'Nha Trang', 'truongthithuytrang011@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '0354037706', 'trang_avatar.PNG', 'GIANGVIEN'),
-('NV0004', 'Nguyễn Tấn Phát', 1, '2000-01-09', 'Nha Trang', 'phat.nt.60cntt@ntu.edu.vn', '211021d2b119d78fe0e0d4d29eeff687', '0342334966', 'phat_avatar.PNG', 'ADMIN'),
-('NV0005', 'Đặng Ngọc Luyến', 1, '2000-01-01', 'Nha Trang', 'dnluyenit2@gmail.com', '211021d2b119d78fe0e0d4d29eeff687', '0977715564', 'luyen_avatar.jpg', 'ADMIN');
+('NV0004', 'Nguyễn Tấn Phát', 1, '2000-01-09', 'Nha Trang', 'phat.nt.60cntt@ntu.edu.vn', '81dc9bdb52d04dc20036dbd8313ed055', '0342334966', 'phat_avatar.PNG', 'ADMIN'),
+('NV0005', 'Đặng Ngọc Luyến', 1, '2000-01-01', 'Nha Trang', 'dnluyenit2@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '0977715564', 'luyen_avatar.jpg', 'ADMIN');
 
 -- --------------------------------------------------------
 
@@ -304,7 +299,8 @@ CREATE TABLE `quyen` (
 
 INSERT INTO `quyen` (`IDQuyen`, `TenQuyen`) VALUES
 ('PHANQUYEN', 'Phân quyền'),
-('QUANLYDANHMUC', 'Quản lý danh mục');
+('QUANLYDANHMUC', 'Quản lý danh mục'),
+('QUANLYSINHVIEN', 'Quản lý sinh viên');
 
 -- --------------------------------------------------------
 
@@ -331,7 +327,10 @@ CREATE TABLE `sinhvien` (
 
 INSERT INTO `sinhvien` (`maSV`, `tenSV`, `gioiTinh`, `ngaySinh`, `diaChi`, `email`, `password`, `sdt`, `hinhAnh`, `MaLop`) VALUES
 ('SV0001', 'Nguyễn Văn Trí', 1, '2000-10-17', 'Cam Ranh', 'svtri@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '0365062796', 'tri_avatar.jpg', '60CNTT2'),
-('SV0002', '	Hoàng Thanh Sơn', 1, '2000-04-07', 'Cam Lâm', 'svson@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '0358405987', 'son_avatar.PNG', '60CNTT2');
+('SV0002', 'Hoàng Thanh Sơn', 1, '2000-04-07', 'Cam Lâm', 'svson@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '0358405987', 'son_avatar.PNG', '60CNTT2'),
+('SV0003', 'Trương Thị Thùy Trang', 0, '2022-01-14', 'Bình Định', 'svtrang@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '0354037706', 'trang_avatar.PNG', '60CNTT1'),
+('SV0004', 'Đặng Ngọc Luyến', 1, '2022-01-07', 'Gia Lai', 'svluyen@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '0354445556', 'luyen_avatar.jpg', '60CNTT3'),
+('SV0005', 'Nguyễn Tấn Phát', 1, '2022-01-07', 'Nha Trang', 'svphat@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '0354037745', 'phat_avatar.PNG', '60CNTT3');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -434,7 +433,7 @@ ALTER TABLE `sinhvien`
 -- AUTO_INCREMENT cho bảng `ketqua`
 --
 ALTER TABLE `ketqua`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

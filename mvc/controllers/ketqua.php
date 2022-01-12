@@ -23,7 +23,7 @@ class KetQua extends Controller{
             'page' => 'indexKetQua',
             'listKQ' => $listKQ,
             'SV' => $SV,
-            'listKT' => $listKT
+            'listKT' => $listKT,
         ]);
     }
 }
