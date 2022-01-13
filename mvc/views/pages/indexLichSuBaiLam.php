@@ -33,8 +33,6 @@
                 }
                 $stt = 65;
                 $numQuestions++;
-                echo '<div>';
-                echo '</div>';
                 echo '</div>';
               }
             }
