@@ -163,4 +163,32 @@ class KyThi extends Controller
         } else
             echo "Không tìm thấy";
     }
+
+    function Delete($id)
+    {
+        $kt = json_decode($this->ktModel->getKyThiById($id), true);
+        $listTenMH = json_decode($this->mhModel->listAll(), true);
+        $NV = json_decode($this->nvModel->getNV(), true);
+
+        //view edit
+        if (count($kt) > 0) {
+            $this->view("layoutAdmin", [
+                'page' => 'kythi/deleteKT',
+                'kt' => $kt[0],
+                'listTenMH' => $listTenMH,
+                'NV' => $NV
+            ]);
+        } else
+            echo "Không tìm thấy";
+    }
+
+    function Confirm($id)
+    {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $confirm = $this->model("KyThiModel");
+            $confirm->delete($id);
+            $_SESSION['thongbao'] = " Xóa kỳ thi thành công";
+        }
+        return $this->redirectTo("KyThi", "Index");
+    }
 }

@@ -90,6 +90,15 @@ if (isset($_SESSION['thongbao'])) {
                     <td><?php echo $data['kt']['ThoiGianKT'] ?></td>
                 </tr>
 
+                <tr>
+                    <td>Môn học:</td>
+                    <td><?php echo $data['kt']['TenMH'] ?></td>
+                </tr>
+
+                <tr>
+                    <td>Giảng viên ra đề:</td>
+                    <td><?php echo $data['kt']['tenNV'] ?></td>
+                </tr>
             </table>
         </td>
     </tr>

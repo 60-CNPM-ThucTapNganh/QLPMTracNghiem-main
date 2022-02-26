@@ -47,4 +47,10 @@ class KyThiModel extends DataBase
         return mysqli_query($this->con, $qr);
     }
 
+    public function delete($makt)
+    {
+        $qr = "DELETE FROM kythi WHERE MaKT = '$makt'";
+        return mysqli_query($this->con, $qr);
+    }
+
 }
